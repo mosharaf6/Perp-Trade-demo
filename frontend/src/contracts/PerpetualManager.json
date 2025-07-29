@@ -1,0 +1,95 @@
+{
+  "contractName": "PerpetualManager",
+  "abi": [
+    {
+      "inputs": [
+        { "internalType": "address", "name": "_vault", "type": "address" }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
+        { "indexed": false, "internalType": "bool", "name": "isLong", "type": "bool" },
+        { "indexed": false, "internalType": "uint256", "name": "margin", "type": "uint256" },
+        { "indexed": false, "internalType": "uint256", "name": "leverage", "type": "uint256" },
+        { "indexed": false, "internalType": "uint256", "name": "entryPrice", "type": "uint256" }
+      ],
+      "name": "PositionOpened",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        { "indexed": true, "internalType": "address", "name": "user", "type": "address" },
+        { "indexed": false, "internalType": "int256", "name": "pnl", "type": "int256" }
+      ],
+      "name": "PositionClosed",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "user", "type": "address" },
+        { "internalType": "bool", "name": "isLong", "type": "bool" },
+        { "internalType": "uint256", "name": "margin", "type": "uint256" },
+        { "internalType": "uint256", "name": "leverage", "type": "uint256" }
+      ],
+      "name": "openPosition",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "user", "type": "address" }
+      ],
+      "name": "closePosition",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "user", "type": "address" }
+      ],
+      "name": "getPosition",
+      "outputs": [
+        { "internalType": "int256", "name": "size", "type": "int256" },
+        { "internalType": "uint256", "name": "margin", "type": "uint256" },
+        { "internalType": "uint256", "name": "entryPrice", "type": "uint256" },
+        { "internalType": "bool", "name": "isLong", "type": "bool" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "vault",
+      "outputs": [
+        { "internalType": "address", "name": "", "type": "address" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        { "internalType": "address", "name": "", "type": "address" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "_vault", "type": "address" }
+      ],
+      "name": "setVault",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+}
