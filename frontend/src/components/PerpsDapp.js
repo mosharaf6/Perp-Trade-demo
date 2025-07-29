@@ -107,9 +107,7 @@ export default function PerpsDapp() {
   
   const isPositionValid = useMemo(() => 
     marginAmount && isValidAmount(marginAmount) && leverage && 
-    parseFloat(marginAmou    cd /home/mosharaf/Projects-fun/random_website
-    rm -rf contracts/.git
-        rm -rf frontend/.gitnt) <= parseFloat(collateral),
+    parseFloat(marginAmount) <= parseFloat(collateral),
     [marginAmount, leverage, collateral]
   );
 
