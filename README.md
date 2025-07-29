@@ -1,5 +1,5 @@
 
-# PerpTrade DApp
+# PerpTrade- A Perpetual Trading Decentralized Exchange DApp
 
 A production-ready decentralized perpetuals trading dApp built with React and Solidity, deployed on the Sepolia testnet.
 
