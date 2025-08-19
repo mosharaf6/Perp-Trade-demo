@@ -3,6 +3,7 @@ import React, { useState, useCallback, useMemo } from "react";
 import { ethers } from "ethers";
 import WalletConnect from "./WalletConnect_new";
 import NetworkStatus from "./NetworkStatus";
+import ContractValidator from "./ContractValidator";
 // import { LoadingButton, LoadingOverlay } from "./Loading";
 import { useToast } from "./ToastProvider";
 
@@ -483,6 +484,9 @@ export default function PerpsDapp() {
         <WalletConnect onConnect={handleConnect} />
       </header>
       
+      {/* Contract Status - Always show */}
+      <ContractValidator />
+      
       {/* Development Notice */}
       {account && (
         <div style={{ 
@@ -494,11 +498,10 @@ export default function PerpsDapp() {
           fontSize: 14,
           color: '#856404'
         }}>
-          <strong>� Contract Status:</strong> Connected to {CONFIG.NETWORK_NAME}
+          <strong>🔧 Connected Status:</strong> Wallet connected to {CONFIG.NETWORK_NAME}
           <br />
           <small>
-            PerpManager: {CONFIG.PERPETUAL_MANAGER_ADDRESS.slice(0,8)}... | 
-            Vault: {CONFIG.VAULT_ADDRESS.slice(0,8)}...
+            Account: {account.slice(0,8)}...{account.slice(-4)}
           </small>
         </div>
       )}
